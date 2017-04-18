@@ -121,10 +121,10 @@ RectTransform:
   m_Father: {fileID: 1983952584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -565, y: 505}
-  m_SizeDelta: {x: -1130, y: -1010}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -350, y: 350}
+  m_SizeDelta: {x: 790, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &363684322
 MonoBehaviour:
@@ -835,7 +835,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305474287}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 237c3ea66b1044440a2a78824b14e858, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -872,7 +872,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.27, z: 6.75}
+  m_Size: {x: 1, y: 1.27, z: 63.22}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1305474293
 MonoBehaviour:
@@ -885,7 +885,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb2f0880714cfe4aabf09fa139b8fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.06
+  speed: 0
+  acceleration: 0.1
+  maxspeed: 0.1
   player: 1
 --- !u!54 &1305474294
 Rigidbody:
@@ -1042,7 +1044,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.27, z: 6.75}
+  m_Size: {x: 1, y: 1.27, z: 63.22}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1479697914
 MeshRenderer:
@@ -1081,7 +1083,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1479697912}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 237c3ea66b1044440a2a78824b14e858, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -1119,7 +1121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb2f0880714cfe4aabf09fa139b8fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.06
+  speed: 0
+  acceleration: 0.01
+  maxspeed: 0.1
   player: 0
 --- !u!54 &1479697919
 Rigidbody:
@@ -1313,10 +1317,10 @@ RectTransform:
   m_Father: {fileID: 1983952584}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 565, y: 505}
-  m_SizeDelta: {x: -1130, y: -1010}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 359, y: 350}
+  m_SizeDelta: {x: 790, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581871233
 MonoBehaviour:

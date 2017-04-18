@@ -18,29 +18,33 @@ public class Collider : MonoBehaviour {
     private int punktyCC;
 
     void Start()
-    {
-        PunktyC.text = punktyCC.ToString();
-        PunktyN.text = punktyNN.ToString();
+    {        
+        if (PlayerPrefs.HasKey("PunktyCCC") == false || PlayerPrefs.HasKey("PunktyNNN") == false)
+        {
+            PlayerPrefs.SetInt("PunktyCCC", punktyCC);
+            PlayerPrefs.SetInt("PunktyNNN", punktyNN);
+        }
+        PunktyC.text = PlayerPrefs.GetInt("PunktyCCC").ToString();
+        PunktyN.text = PlayerPrefs.GetInt("PunktyNNN").ToString();
     }
 
     void OnCollisionEnter()
     {
-        ball ball = gameObject.GetComponent<ball>();
-        if (ball !=null)
-        {
-            ball.transform.position = new Vector3(0f, 1f, 0f);
-        }
             if (sciana == Ktorasciana.lewa)
             {
                 punktyNN++;
-                PunktyN.text = punktyNN.ToString();
+                PunktyN.text = PlayerPrefs.GetInt("PunktyNNN").ToString();
+                PlayerPrefs.SetInt("PunktyNNN", punktyNN);
+                SceneManager.LoadScene(0);
             }
             if (sciana == Ktorasciana.prawa)
             {
                 punktyCC++;
-                PunktyC.text = punktyCC.ToString();
+                PunktyC.text = PlayerPrefs.GetInt("PunktyCCC").ToString();
+                PlayerPrefs.SetInt("PunktyCCC", punktyCC);
+                SceneManager.LoadScene(0);
             }
-        SceneManager.LoadScene(0);
+            
     }
 
 }
