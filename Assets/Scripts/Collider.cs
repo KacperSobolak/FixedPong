@@ -23,6 +23,7 @@ public class Collider : MonoBehaviour {
         {
             PlayerPrefs.SetInt("PunktyCCC", punktyCC);
             PlayerPrefs.SetInt("PunktyNNN", punktyNN);
+            PlayerPrefs.Save();
         }
         PunktyC.text = PlayerPrefs.GetInt("PunktyCCC").ToString();
         PunktyN.text = PlayerPrefs.GetInt("PunktyNNN").ToString();
@@ -33,18 +34,16 @@ public class Collider : MonoBehaviour {
             if (sciana == Ktorasciana.lewa)
             {
                 punktyNN++;
-                PunktyN.text = PlayerPrefs.GetInt("PunktyNNN").ToString();
-                PlayerPrefs.SetInt("PunktyNNN", punktyNN);
-                SceneManager.LoadScene(0);
+                PlayerPrefs.SetInt("PunktyNNN", punktyNN++);
+                PlayerPrefs.Save();
             }
             if (sciana == Ktorasciana.prawa)
             {
                 punktyCC++;
-                PunktyC.text = PlayerPrefs.GetInt("PunktyCCC").ToString();
                 PlayerPrefs.SetInt("PunktyCCC", punktyCC);
-                SceneManager.LoadScene(0);
+                PlayerPrefs.Save();
             }
-            
+        SceneManager.LoadScene(1);
     }
 
 }

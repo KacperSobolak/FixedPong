@@ -16,7 +16,7 @@ public class Menu : MonoBehaviour {
     public void GrajBTN()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void WyjdzBTN()

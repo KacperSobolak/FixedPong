@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public enum ePlayer
 {
@@ -7,7 +8,7 @@ public enum ePlayer
     Red
 }
 
-public class Player : MonoBehaviour {
+public class Player : NetworkBehaviour {
 
     
 
@@ -22,30 +23,36 @@ public class Player : MonoBehaviour {
 	
 	void FixedUpdate() {
         float inputSpeed = 0f;
-        if (player == ePlayer.Blue)
+        if (isServer)
         {
-            inputSpeed = Input.GetAxisRaw("Player1");
-            speed += acceleration;
-            if (speed >maxspeed)
+            if (player == ePlayer.Blue)
             {
-                speed = maxspeed;
-            }
-            if (inputSpeed == 0)
-            {
-                speed = 0;
+                inputSpeed = Input.GetAxisRaw("Player1");
+                speed += acceleration;
+                if (speed > maxspeed)
+                {
+                    speed = maxspeed;
+                }
+                if (inputSpeed == 0)
+                {
+                    speed = 0;
+                }
             }
         }
-        else if (player == ePlayer.Red)
+        else if (isClient)
         {
-            inputSpeed = Input.GetAxisRaw("Player2");
-            speed += acceleration;
-            if (speed > maxspeed)
+            if (player == ePlayer.Red)
             {
-                speed = maxspeed;
-            }
-            if (inputSpeed == 0)
-            {
-                speed = 0;
+                inputSpeed = Input.GetAxisRaw("Player2");
+                speed += acceleration;
+                if (speed > maxspeed)
+                {
+                    speed = maxspeed;
+                }
+                if (inputSpeed == 0)
+                {
+                    speed = 0;
+                }
             }
         }
 
